@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>AmericaShare Equipment Desk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">AS</span><div><strong>AmericaShare</strong><small>Resource desk</small></div></div>
+        <nav>
+          <button class="nav-item active" data-view="overview"><span>⌂</span>Overview</button>
+          <button class="nav-item" data-view="checkouts"><span>↗</span>Check-outs</button>
+          <button class="nav-item" data-view="equipment"><span>▦</span>Equipment</button>
+          <button class="nav-item" data-view="visitors"><span>◎</span>Visitors</button>
+        </nav>
+        <div class="sidebar-foot"><div class="status-dot"></div><div><strong>System online</strong><small>Records saved on this device</small></div></div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar"><div><p class="eyebrow">ICT EQUIPMENT CONTROL</p><h1 id="page-title">Good morning, desk team</h1></div><div class="top-actions"><span class="date-pill" id="today"></span><button class="primary-button" id="new-checkout">+ New check-out</button></div></header>
+        <div id="app"></div>
+      </main>
+    </div>
+    <div class="modal-backdrop hidden" id="modal-backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="close-button" id="close-modal">×</button><p class="eyebrow">EQUIPMENT DESK</p><h2 id="modal-title">Record a check-out</h2><p class="modal-intro">Capture who is borrowing equipment and where it is going.</p><form id="checkout-form"><div class="form-grid"><label>Visitor name<input id="visitor-name" required placeholder="e.g. Daniel Otieno" /></label><label>Student / staff ID<input id="visitor-id" required placeholder="e.g. ST-2041" /></label><label>Location<select id="visitor-location"><option>Lab 1</option><option>Lab 2</option><option>Lab 3</option><option>Junior Library</option><option>Senior Library</option><option>DLP Student</option></select></label><label>Expected return<select id="return-window"><option value="Today">Today</option><option value="Tomorrow">Tomorrow</option><option value="This week">This week</option></select></label></div><fieldset><legend>Equipment issued</legend><div id="equipment-picker" class="equipment-picker"></div></fieldset><label>Notes (optional)<textarea id="checkout-notes" rows="2" placeholder="Condition, accessories, or other details"></textarea><button class="primary-button full-width" type="submit">Record check-out</button></form></section></div>
+    <div class="toast" id="toast"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
